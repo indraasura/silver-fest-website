@@ -1,78 +1,62 @@
 <html>
+    <head>
+        <title>
+            Silver Fest
+        </title>
+        <link rel="stylesheet" href="css/main.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet"> 
+    </head>
+    <body>
+        <section>
+            <h1 class="anim">Silver Fest 4.0 : Coming soon</h1>
+        </section>
+        <section>
+            <h1 class="anim">Till Then...</h1>
+        </section>
+        <section>
+            <h1 class="anim">Stay home and stay safe!</h1>
+        </section>
+        <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 500 500">
+            <style>
+                .text{
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    fill: #b8b8b8;
+                }
+            </style>
+            <path id="our-text" fill="#fff" d="M33.5 39.5v429h437v-429h-431"/>
+            <text y="10" font-size="30" font-family="Montserrat, sans-serif">
+                <textPath id="text-path" class="text" href="#our-text" startOffset="400">
+                    A mixture of food, games and lots of fun. 
+                </textPath>
+            </text>
+        </svg>
+        <script>
+            var textPath = document.querySelector('#text-path')
+            function updateTextPathOffset(offset){
+                textPath.setAttribute('startOffset', offset)
+            }
+            function onScroll(){
+                requestAnimationFrame(function(){
+                    updateTextPathOffset(window.scrollY * 0.5)
+                })
+            }
+            window.addEventListener('scroll', onScroll)
 
-<head>
-    <title>Silver Fest</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+            const titles = document.querySelectorAll('.anim')
+            observer = new IntersectionObserver((entries)=>{
+                entries.forEach(entry=>{
+                    if(entry.isIntersecting == true){
+                        entry.target.classList.add('animate')
+                    } else {
+                        entry.target.classList.remove('animate')
+                    }
+                })
+            })
+            titles.forEach(title=>{
+                observer.observe(title)
+            })
 
-<body>
-    <div class="main">
-           
-        <header class="header-container">
-            <a href="#"><img src="img/ham.svg" alt="menu" class="menu hide-desktop show-mobile" id="menu"></a>
-                <nav>
-                    <ul class="nav show-dektop hide-mobile" id="nav">
-                        <li><img src="img/logo.png" alt="logo" class="logo"></li>
-                        <li>
-                            <a href="#" class="exit-btn" id="exit"><img src="img/exit.png" alt="exit"></a>
-                        </li>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#" class="about-link">About</a></li>
-                        <li><a href="#" class="food-link">Food</a></li>
-                        <li><a href="#" class="games-link">Games</a></li>
-                        <li><a href="form.html">Contact</a></li>
-                    </ul>
-                    <ul class="nav-links show-dektop hide-mobile" id="nav-links">
-                        <li><a href="#">Swarup Hegde</a></li>
-                        <li><a href="#">Sanchit Jain</a></li>
-                        <li><a href="#">Aman Singh</a></li>
-                    </ul>
-                </nav>
-        </header>
-        <div class="home-text-container" id="home">
-            <h2>Silver Fest 4.0</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore
-                magna aliqua.<br> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                ea
-                commodo consequat.</p>
-        </div>
-        <div class="about-text-container" id="about">
-            <h2>About</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore
-                magna aliqua.<br> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                ea
-                commodo consequat.</p>
-        </div>
-
-        <div class="food-text-container" id="food">
-            <h2>Food</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore
-                magna aliqua.<br> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                ea
-                commodo consequat.</p>
-        </div>
-
-        <div class="games-text-container" id="games">
-            <h2>Games</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore
-                magna aliqua.<br> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                ea
-                commodo consequat.</p>
-        </div>
-    </div>
-
-    <footer class="footer-container">
-        <div class="container">
-            <ul class="footer-links">
-                <li><a href="#">Code of Conduct</a></li>
-                <li><a href="#">Core Team</a></li>
-            </ul>
-        </div>
-    </footer>
-</body>
-
+        </script>
+    </body>
 </html>
