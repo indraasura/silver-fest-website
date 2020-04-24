@@ -1,5 +1,5 @@
 body {
-    height: 200vh;
+    height: 400vh;
     margin: 0;
 }
   
@@ -21,7 +21,7 @@ body {
     z-index: -1;
   }
 
-  h1{
+  h1, .credit{
       font-family: 'Montserrat', sans-serif;
       font-size: 4em;
   }
@@ -103,3 +103,51 @@ body {
     }
 }
 
+@media only screen and (max-width: 500px){
+    h1{
+        font-size: 2em;
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .bg-svg{
+        width: 100%;
+    }
+    .credit{
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.6em;
+        text-decoration: none;
+    }
+    
+}
+
+a{
+    text-decoration: none;
+}
+
+
+@media only screen and (min-width: 500px){
+    h1{
+        font-size: 3em;
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .bg-svg{
+        width: 100%;
+    }
+    .credit{
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1em;
+        text-decoration: none;
+    }
+    
+}
