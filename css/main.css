@@ -13,7 +13,7 @@ section {
   position: relative;
 }
 
-svg {
+.text-svg {
   width: 100%;
   height: 100vh;
   position: fixed;
@@ -27,8 +27,8 @@ h1 {
 }
 
 .animate {
-  -webkit-animation: reveal 1s forwards;
-          animation: reveal 1s forwards;
+  -webkit-animation: reveal 1.5s forwards;
+          animation: reveal 1.5s forwards;
 }
 
 @-webkit-keyframes reveal {
@@ -54,6 +54,118 @@ h1 {
     opacity: 1;
     -webkit-transform: translateX(0deg);
             transform: translateX(0deg);
+  }
+}
+
+.bg-svg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  opacity: 0.8;
+  z-index: -1;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#left-purple-tree {
+  -webkit-animation: sway 1.8s infinite linear;
+          animation: sway 1.8s infinite linear;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+}
+
+@-webkit-keyframes sway {
+  0% {
+    -webkit-transform: skewX(0deg);
+            transform: skewX(0deg);
+  }
+  50% {
+    -webkit-transform: skewX(-2deg);
+            transform: skewX(-2deg);
+  }
+  100% {
+    -webkit-transform: skewX(0deg);
+            transform: skewX(0deg);
+  }
+}
+
+@keyframes sway {
+  0% {
+    -webkit-transform: skewX(0deg);
+            transform: skewX(0deg);
+  }
+  50% {
+    -webkit-transform: skewX(-2deg);
+            transform: skewX(-2deg);
+  }
+  100% {
+    -webkit-transform: skewX(0deg);
+            transform: skewX(0deg);
+  }
+}
+
+#left-dark-tree {
+  -webkit-animation: sway 1.5s infinite linear;
+          animation: sway 1.5s infinite linear;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+}
+
+#left-big-tree {
+  -webkit-animation: sway 3s infinite linear;
+          animation: sway 3s infinite linear;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+}
+
+#right-purple-tree {
+  -webkit-animation: sway-right 1.8s infinite linear;
+          animation: sway-right 1.8s infinite linear;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+}
+
+#right-dark-tree {
+  -webkit-animation: sway-right 1.4s infinite linear;
+          animation: sway-right 1.4s infinite linear;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+}
+
+#right-big-tree {
+  -webkit-animation: sway-right 2.9s infinite linear;
+          animation: sway-right 2.9s infinite linear;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+}
+
+@-webkit-keyframes sway-right {
+  0% {
+    -webkit-transform: skewX(-2deg);
+            transform: skewX(-2deg);
+  }
+  50% {
+    -webkit-transform: skewX(0deg);
+            transform: skewX(0deg);
+  }
+  100% {
+    -webkit-transform: skewX(-2deg);
+            transform: skewX(-2deg);
+  }
+}
+
+@keyframes sway-right {
+  0% {
+    -webkit-transform: skewX(-2deg);
+            transform: skewX(-2deg);
+  }
+  50% {
+    -webkit-transform: skewX(0deg);
+            transform: skewX(0deg);
+  }
+  100% {
+    -webkit-transform: skewX(-2deg);
+            transform: skewX(-2deg);
   }
 }
 /*# sourceMappingURL=main.css.map */

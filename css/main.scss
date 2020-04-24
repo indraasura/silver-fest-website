@@ -1,7 +1,7 @@
 body {
     height: 200vh;
     margin: 0;
-  }
+}
   
   section {
     height: 100vh;
@@ -13,7 +13,7 @@ body {
     position: relative;
   }
   
-  svg {
+  .text-svg {
     width: 100%;
     height: 100vh;
     position: fixed;
@@ -27,7 +27,7 @@ body {
   }
 
   .animate{
-      animation : reveal 1s forwards;
+      animation : reveal 1.5s forwards;
   }
 
   @keyframes reveal {
@@ -40,3 +40,66 @@ body {
         transform: translateX(0deg);
     }
   }
+
+  .bg-svg{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    opacity: 0.8;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+  }
+
+  #left-purple-tree{
+    animation: sway 1.8s infinite linear;
+    transform-origin: bottom;
+}
+
+@keyframes sway{
+    0%{
+        transform: skewX(0deg);
+    }
+    50%{
+        transform: skewX(-2deg);
+    }
+    100%{
+        transform: skewX(0deg);
+    }
+}
+
+#left-dark-tree{
+    animation: sway 1.5s infinite linear;
+    transform-origin: bottom;
+}
+
+#left-big-tree{
+    animation: sway 3s infinite linear;
+    transform-origin: bottom;
+}
+
+#right-purple-tree{
+    animation: sway-right 1.8s infinite linear;
+    transform-origin: bottom;
+}
+#right-dark-tree{
+    animation: sway-right 1.4s infinite linear;
+    transform-origin: bottom;
+}
+
+#right-big-tree{
+    animation: sway-right 2.9s infinite linear;
+    transform-origin: bottom;
+}
+
+@keyframes sway-right{
+    0%{
+        transform: skewX(-2deg);
+    }
+    50%{
+        transform: skewX(0deg);
+    }
+    100%{
+        transform: skewX(-2deg);
+    }
+}
+
